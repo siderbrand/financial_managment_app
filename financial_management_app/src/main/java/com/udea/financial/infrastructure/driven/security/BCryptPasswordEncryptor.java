@@ -11,4 +11,9 @@ public class BCryptPasswordEncryptor implements IPasswordEncryptor {
     public String encrypt(String password) {
         return BCrypt.hashpw(password, BCrypt.gensalt());
     }
+
+    @Override
+    public boolean matches(String rawPassword, String encodedPassword) {
+        return BCrypt.checkpw(rawPassword, encodedPassword);
+    }
 }
