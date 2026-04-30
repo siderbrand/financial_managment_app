@@ -12,6 +12,8 @@ public final class SwaggerConstants {
     // Tags
     public static final String TAG_USER = "Users";
     public static final String TAG_USER_DESCRIPTION = "Operations related to user management";
+    public static final String TAG_AUTH = "Authentication";
+    public static final String TAG_AUTH_DESCRIPTION = "Operations related to user authentication";
 
     // User Controller
     public static final String USER_CREATE_SUMMARY = "Create a new user";
@@ -25,12 +27,18 @@ public final class SwaggerConstants {
     public static final String USER_DELETE_SUMMARY = "Delete user by ID";
     public static final String USER_DELETE_DESCRIPTION = "Deletes a user from the system by their unique identifier";
 
+    // Auth Controller
+    public static final String AUTH_LOGIN_SUMMARY = "User login";
+    public static final String AUTH_LOGIN_DESCRIPTION = "Authenticates a user with email and password, returns a JWT token";
+
     // Response codes
     public static final String CODE_200 = "200";
     public static final String CODE_201 = "201";
     public static final String CODE_400 = "400";
+    public static final String CODE_401 = "401";
     public static final String CODE_404 = "404";
     public static final String CODE_409 = "409";
+    public static final String CODE_423 = "423";
     public static final String CODE_500 = "500";
 
     // Response descriptions
@@ -39,5 +47,7 @@ public final class SwaggerConstants {
     public static final String RESP_BAD_REQUEST = "Validation error in request body";
     public static final String RESP_NOT_FOUND = "User not found";
     public static final String RESP_CONFLICT = "Email already registered";
+    public static final String RESP_UNAUTHORIZED = "Invalid credentials";
+    public static final String RESP_LOCKED = "Account temporarily locked";
     public static final String RESP_INTERNAL_ERROR = "Internal server error";
 }

@@ -17,4 +17,6 @@ public class User {
     private String email;
     private String password;
     private LocalDateTime registrationDate;
+    private int failedLoginAttempts;
+    private LocalDateTime lockTime;
 }

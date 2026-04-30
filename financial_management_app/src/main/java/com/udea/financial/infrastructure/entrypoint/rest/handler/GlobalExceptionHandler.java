@@ -1,6 +1,8 @@
 package com.udea.financial.infrastructure.entrypoint.rest.handler;
 
+import com.udea.financial.domain.exception.AccountLockedException;
 import com.udea.financial.domain.exception.DuplicateEmailException;
+import com.udea.financial.domain.exception.InvalidCredentialsException;
 import com.udea.financial.domain.exception.UserNotFoundException;
 import com.udea.financial.infrastructure.entrypoint.rest.dto.ErrorResponseDTO;
 import org.springframework.http.HttpStatus;
@@ -35,6 +37,24 @@ public class GlobalExceptionHandler {
                 .details(List.of("A user with this email already exists"))
                 .build();
         return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
+    }
+
+    @ExceptionHandler(InvalidCredentialsException.class)
+    public ResponseEntity<ErrorResponseDTO> handleInvalidCredentials(InvalidCredentialsException ex) {
+        ErrorResponseDTO error = ErrorResponseDTO.builder()
+                .errorCode(HttpStatus.UNAUTHORIZED.value())
+                .message(ex.getMessage())
+                .build();
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+    }
+
+    @ExceptionHandler(AccountLockedException.class)
+    public ResponseEntity<ErrorResponseDTO> handleAccountLocked(AccountLockedException ex) {
+        ErrorResponseDTO error = ErrorResponseDTO.builder()
+                .errorCode(HttpStatus.LOCKED.value())
+                .message(ex.getMessage())
+                .build();
+        return ResponseEntity.status(HttpStatus.LOCKED).body(error);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

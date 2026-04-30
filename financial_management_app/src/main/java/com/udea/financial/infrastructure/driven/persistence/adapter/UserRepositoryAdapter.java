@@ -23,6 +23,11 @@ public class UserRepositoryAdapter implements IUserRepository {
     }
 
     @Override
+    public void update(User user) {
+        userRepository.save(userMapper.toEntity(user));
+    }
+
+    @Override
     public Optional<User> findById(Long id) {
         return userRepository.findById(id).map(userMapper::toDomain);
     }
