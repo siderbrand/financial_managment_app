@@ -23,6 +23,7 @@
         <jjwt.version>0.12.6</jjwt.version>
         <!-- Forzamos la versión de seguridad requerida por Trivy para 2026 -->
         <spring-security.version>6.5.9</spring-security.version>
+        <tomcat.version>10.1.53</tomcat.version>
     </properties>
 
     <dependencies>
