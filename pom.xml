@@ -24,7 +24,7 @@
         <spring-security.version>6.5.9</spring-security.version>
         <tomcat.version>10.1.53</tomcat.version>
         <!-- SonarCloud Properties -->
-        <sonar.projectKey>financial_managment_app</sonar.projectKey>
+        <sonar.projectKey>Fabrica-escuela_financial_managment_app</sonar.projectKey>
         <sonar.organization>fabrica-escuela</sonar.organization>
         <sonar.projectName>financial_managment_app</sonar.projectName>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
