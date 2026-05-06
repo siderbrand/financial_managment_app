@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.udea.financial</groupId>
-    <artifactId>financial_management_app</artifactId>
+    <artifactId>fabrica-escuela</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>financial_management_app</name>
     <description>Financial Management System</description>
